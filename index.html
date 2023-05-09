@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="icon" href="favicon.ico">
+    <style>
+        .main{
+            width:380px;height: 330px;background-color:black;
+        }
+        input{
+            width: 20%; height: 50px; font-size: 30px; margin: 6px;
+        }
+        #ccc{
+            width: 95%; height: 60px; background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form name="f">
+            <input type="text" name="ppp" placeholder="0" id="ccc"> <br>
+            <input type="button" value="1" onclick="f.ppp.value+=1">
+            <input type="button" value="2" onclick="f.ppp.value+=2">
+            <input type="button" value="3" onclick="f.ppp.value+=3">
+            <input type="button" value="+" onclick="add()"> 
+            <br>
+            <input type="button" value="4" onclick="f.ppp.value+=4">
+            <input type="button" value="5" onclick="f.ppp.value+=5">
+            <input type="button" value="6" onclick="f.ppp.value+=6">
+            <input type="button" value="-" onclick="sub()"> 
+            <br>
+            <input type="button" value="7" onclick="f.ppp.value+=7">
+            <input type="button" value="8" onclick="f.ppp.value+=8">
+            <input type="button" value="9" onclick="f.ppp.value+=9">
+            <input type="button" value="/" onclick="divide()"> 
+            <br>
+            <input type="button" value="c" onclick="f.ppp.value=''">
+            <input type="button" value="0" onclick="f.ppp.value+=0">
+            <input type="button" value="=" onclick="f.ppp.value=eval(f.ppp.value)">
+            <input type="button" value="x" onclick="mul()"> 
+            <br>
+        </form>
+    </div>
+
+    <script>
+        function add(){
+            var a=0, b=0;
+            a=f.ppp.value;
+            b=a.charAt (a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.ppp.value=a.substring(0,a.length-1);
+                f.ppp.value+='+';
+            }
+            else{
+                f.ppp.value+='+';
+            }
+        }
+
+        function sub(){
+            var a=0, b=0;
+            a=f.ppp.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.ppp.value=a.substring(0,a.length-1);
+                f.ppp.value+='-';
+            }
+            else{
+                f.ppp.value+='-';
+            }
+        }
+
+        function mul(){
+            var a=0, b=0;
+            a=f.ppp.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.ppp.value=a.substring(0,a.length-1);
+                f.ppp.value+='*';
+            }
+            else{
+                f.ppp.value+='*';
+            }
+        }
+
+        function divide(){
+            var a=0, b=0;
+            a=f.ppp.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='/' || b=='*'){
+                f.ppp.value=a.substring(0,a.length-1);
+                f.ppp.value+='/';
+            }
+            else{
+                f.ppp.value+='/';
+            }
+        }
+    </script>
+</body>
+</html>
